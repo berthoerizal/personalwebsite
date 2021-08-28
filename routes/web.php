@@ -21,3 +21,4 @@ Route::get('/', function () {
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::get('/skill', [SkillController::class, 'index']);
+Route::post('/skill', [SkillController::class, 'store']);

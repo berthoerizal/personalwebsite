@@ -1,4 +1,4 @@
-@extends('layouts.template_admin')
+@extends('layouts.app')
 @section('title', $title)
 @section('content')
 <div class="content-wrapper">
