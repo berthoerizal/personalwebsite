@@ -19,6 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', [DashboardController::class, 'index']);
-Route::get('/skill', [SkillController::class, 'index']);
-Route::post('/skill', [SkillController::class, 'store']);
+Route::resource('skill', SkillController::class);
+
+// Route::get('/dashboard', [DashboardController::class, 'index']);
+// Route::get('/skill', [SkillController::class, 'index']);
+// Route::post('/skill', [SkillController::class, 'store']);
+// Route::put('/skill/{id}', [SkillController::class, 'update']);

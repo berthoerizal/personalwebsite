@@ -37,17 +37,23 @@
                 <table id="example2" class="table table-bordered table-striped">
                   <thead>
                   <tr>
+                    <th>#</th>
                     <th>Skill Title</th>
                     <th>Picture</th>
                     <th>Action</th>
                   </tr>
                   </thead>
                   <tbody>
+                  <?php $x=1; ?>
                   @foreach ($skills as $skill)
                   <tr>
+                    <td><?php echo $x++.'.'; ?></td>
                     <td>{{$skill->skill_title}}</td>
-                    <td>{{$skill->picture}}</td>
-                    <td></td>
+                    <td><img src="{{asset('images/'.$skill->picture)}}" alt="{{$skill->skill_title}}" class="img-thumbnail" width="100"></td>
+                    <td>
+                      @include('skill.edit_modal')
+                      @include('skill.delete_modal')
+                    </td>
                   </tr>
                   @endforeach
                   </tbody>
@@ -65,4 +71,16 @@
     </section>
     <!-- /.content -->
   </div>
+  <script>
+    function previewImg() {
+        const picture = document.querySelector('#picture');
+        const imgPreview = document.querySelector('.img-preview');
+        const filePicture = new FileReader();
+        filePicture.readAsDataURL(picture.files[0]);
+
+        filePicture.onload = function(e) {
+            imgPreview.src = e.target.result;
+        }
+    }
+</script>
 @endsection
