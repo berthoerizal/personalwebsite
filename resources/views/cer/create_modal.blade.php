@@ -7,19 +7,31 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
         <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Skill | Add</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Certificate | Add</h5>
         <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
         </button>
         </div>
-        <form action="/skill" method="POST" enctype="multipart/form-data">
+        <form action="/certificate" method="POST" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="modal-body">
                 <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="cer_title">Certificate Title</label>
+                            <input type="text" class="form-control" name="cer_title" id="cer_title" placeholder="Certificate Title" value="{{old('cer_title')}}">
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="cer_info">Certificate Description</label>
+                            <input type="text" class="form-control" name="cer_info" id="cer_info" placeholder="Certificate Description" value="{{old('cer_info')}}">
+                        </div>
+                    </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="skill_title">Skill Title</label>
-                            <input type="text" class="form-control" name="skill_title" id="skill_title" placeholder="Skill Title" value="{{old('skill_title')}}">
+                            <label for="cer_date">Certificate Date</label>
+                            <input type="date" class="form-control" name="cer_date" id="cer_date" value="{{old('cer_date')}}">
                         </div>
                         <div class="form-group">
                             <label for="name">Picture</label><br>

@@ -47,7 +47,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/experience" class="nav-link">
+            <a href="/experience" class="nav-link {{$active==='experience'?'active':''}}">
             <i class="nav-icon fas fa-shoe-prints"></i>
               <p>
                 Experience
@@ -55,7 +55,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/certificate" class="nav-link">
+            <a href="/certificate" class="nav-link {{$active==='certificate'?'active':''}}">
             <i class="nav-icon fas fa-award"></i>
               <p>
                 Certificate

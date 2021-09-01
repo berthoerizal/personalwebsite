@@ -6,6 +6,7 @@
     <section class="content-header">
       <div class="container-fluid">
         @include('message.alert_notif')
+
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1>{{$title}}</h1>
@@ -28,7 +29,7 @@
             <div class="card">
               <div class="card-header">
                 <div class="float-right">
-                  <a href="/portfolio/create" class="btn btn-primary"><i class="fa fa-plus"></i> Add</a>
+                  @include('cer.create_modal')
                 </div>
               </div>
               <!-- /.card-header -->
@@ -38,6 +39,7 @@
                   <tr>
                     <th>#</th>
                     <th>Title</th>
+                    <th>Description</th>
                     <th>Picture</th>
                     <th>Date</th>
                     <th>Action</th>
@@ -45,24 +47,22 @@
                   </thead>
                   <tbody>
                   <?php $x=1; ?>
-                  @foreach ($ports as $port)
+                  @foreach ($cers as $cer)
                   <tr>
                     <td><?php echo $x++.'.'; ?></td>
-                    <td>{{$port->port_title}}</td>
+                    <td>{{$cer->cer_title}}</td>
+                    <td>{{$cer->cer_info}}</td>
                     <td>
-                        @if ($port->picture!=NULL)
-                        <img src="{{asset('images/'.$port->picture)}}" alt="{{$port->port_title}}" class="img-thumbnail" width="50">
+                        @if ($cer->picture!=NULL)
+                        <img src="{{asset('images/'.$cer->picture)}}" alt="{{$cer->cer_title}}" class="img-thumbnail" width="50">
                         @else
-                        <img src="{{asset('images/default-image.JPG')}}" alt="{{$port->port_title}}" class="img-thumbnail" width="50">
+                        <img src="{{asset('images/default-image.JPG')}}" alt="{{$cer->cer_title}}" class="img-thumbnail" width="50">
                         @endif
                     </td>
-                    <td><?php echo date('d-m-Y', strtotime($port->port_date)); ?></td>
+                    <td><?php echo date("d F Y", strtotime($cer->cer_date)); ?></td>
                     <td>
-                      <a href="/portfolio/{{$port->port_slug}}" class="btn btn-info"><i class="fab fa-readme"></i> Detail</a>
-                      <a href="/portfolio/{{$port->port_slug}}/edit" class="btn btn-primary"><i class="fas fa-edit"></i> Edit</a>
-                     @include('portfolio.delete_modal')
-                      {{-- @include('skill.edit_modal')
-                      @include('skill.delete_modal') --}}
+                      @include('cer.edit_modal')
+                      @include('cer.delete_modal')
                     </td>
                   </tr>
                   @endforeach
@@ -81,4 +81,16 @@
     </section>
     <!-- /.content -->
   </div>
+  <script>
+    function previewImg() {
+        const picture = document.querySelector('#picture');
+        const imgPreview = document.querySelector('.img-preview');
+        const filePicture = new FileReader();
+        filePicture.readAsDataURL(picture.files[0]);
+
+        filePicture.onload = function(e) {
+            imgPreview.src = e.target.result;
+        }
+    }
+</script>
 @endsection

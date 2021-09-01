@@ -19,7 +19,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="name">Skill Name</label>
+                            <label for="skill_title">Skill Name</label>
                             <input type="text" class="form-control" name="skill_title" id="skill_title" placeholder="Skill Name" value="{{$skill->skill_title}}">
                         </div>
                         <div class="form-group">
