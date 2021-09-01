@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SkillController;
 use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\ExperienceController;
+use App\Models\Experience;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +24,7 @@ Route::get('/', function () {
 Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::resource('skill', SkillController::class);
 Route::resource('portfolio', PortfolioController::class);
-
+Route::resource('experience', ExperienceController::class);
 // Route::get('/dashboard', [DashboardController::class, 'index']);
 // Route::get('/skill', [SkillController::class, 'index']);
 // Route::post('/skill', [SkillController::class, 'store']);

@@ -18,8 +18,8 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="name">Skill Name</label>
-                            <input type="text" class="form-control" name="skill_title" id="skill_title" placeholder="Skill Name" value="{{old('skill_title')}}">
+                            <label for="name">Skill Title</label>
+                            <input type="text" class="form-control" name="skill_title" id="skill_title" placeholder="Skill Title" value="{{old('skill_title')}}">
                         </div>
                         <div class="form-group">
                             <label for="name">Picture</label><br>

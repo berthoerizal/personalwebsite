@@ -47,14 +47,6 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/education" class="nav-link">
-            <i class="nav-icon fas fa-school"></i>
-              <p>
-                Education
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
             <a href="/experience" class="nav-link">
             <i class="nav-icon fas fa-shoe-prints"></i>
               <p>

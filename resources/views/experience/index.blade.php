@@ -28,7 +28,7 @@
             <div class="card">
               <div class="card-header">
                 <div class="float-right">
-                  <a href="/portfolio/create" class="btn btn-primary"><i class="fa fa-plus"></i> Add</a>
+                  @include('experience.create_modal')
                 </div>
               </div>
               <!-- /.card-header -->
@@ -38,25 +38,24 @@
                   <tr>
                     <th>#</th>
                     <th>Title</th>
-                    <th>Picture</th>
-                    <th>Date</th>
+                    <th>Info</th>
+                    <th>Date Start</th>
+                    <th>Date Finish</th>
                     <th>Action</th>
                   </tr>
                   </thead>
                   <tbody>
                   <?php $x=1; ?>
-                  @foreach ($ports as $port)
+                  @foreach ($exps as $exp)
                   <tr>
                     <td><?php echo $x++.'.'; ?></td>
-                    <td>{{$port->port_title}}</td>
-                    <td><img src="{{asset('images/'.$port->picture)}}" alt="{{$port->port_title}}" class="img-thumbnail" width="100"></td>
-                    <td><?php echo date('d-m-Y', strtotime($port->port_date)); ?></td>
+                    <td>{{$exp->exp_title}}</td>
+                    <td>{{$exp->exp_info}}</td>
+                    <td><?php echo date("d F Y", strtotime($exp->exp_date_start)); ?></td>
+                    <td><?php echo date("d F Y", strtotime($exp->exp_date_finish)); ?></td>
                     <td>
-                      <a href="/portfolio/{{$port->port_slug}}" class="btn btn-info"><i class="fab fa-readme"></i> Detail</a>
-                      <a href="/portfolio/{{$port->port_slug}}/edit" class="btn btn-primary"><i class="fas fa-edit"></i> Edit</a>
-                     @include('portfolio.delete_modal')
-                      {{-- @include('skill.edit_modal')
-                      @include('skill.delete_modal') --}}
+                      @include('experience.edit_modal')
+                      @include('experience.delete_modal')
                     </td>
                   </tr>
                   @endforeach
