@@ -105,14 +105,6 @@ class SkillController extends Controller
     {
         $skill = Skill::find($id);
 
-        // if ($skill->picture == NULL) {
-        //     $skill->delete();
-        // } elseif () {
-        //     unlink("images/" . $skill->picture);
-        // } else {
-        //     $skill->delete();
-        // }
-
         if ($skill->picture != 'default-image.jpg') {
             unlink("images/" . $skill->picture);
         }

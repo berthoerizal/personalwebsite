@@ -1,5 +1,5 @@
-<a class="btn btn-primary btn-sm" href="#" data-toggle="modal" data-target="#editModal{{$skill->id}}">
-    <i class="fa fa-edit"></i>
+<a class="btn btn-primary" href="#" data-toggle="modal" data-target="#editModal{{$skill->id}}">
+    <i class="fas fa-edit"></i>
     Edit
 </a>
 <!-- Tambah Modal-->
@@ -7,7 +7,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
         <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Edit Skill</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Skill | Edit</h5>
         <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
         </button>
@@ -38,8 +38,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary btn-sm">Save</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save</button>
             </div>
         </form>
     </div>

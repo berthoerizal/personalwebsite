@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SkillController;
+use App\Http\Controllers\PortfolioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,8 +19,9 @@ use App\Http\Controllers\SkillController;
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::resource('skill', SkillController::class);
+Route::resource('portfolio', PortfolioController::class);
 
 // Route::get('/dashboard', [DashboardController::class, 'index']);
 // Route::get('/skill', [SkillController::class, 'index']);

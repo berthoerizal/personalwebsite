@@ -6,7 +6,6 @@
     <section class="content-header">
       <div class="container-fluid">
         @include('message.alert_notif')
-
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1>{{$title}}</h1>
@@ -29,30 +28,35 @@
             <div class="card">
               <div class="card-header">
                 <div class="float-right">
-                  @include('skill.create_modal')
+                  <a href="/portfolio/create" class="btn btn-primary"><i class="fa fa-plus"></i> Add</a>
                 </div>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <table id="example2" class="table table-bordered table-striped">
+                <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
                     <th>#</th>
-                    <th>Skill Title</th>
+                    <th>Portfolio Title</th>
                     <th>Picture</th>
+                    <th>Date</th>
                     <th>Action</th>
                   </tr>
                   </thead>
                   <tbody>
                   <?php $x=1; ?>
-                  @foreach ($skills as $skill)
+                  @foreach ($ports as $port)
                   <tr>
                     <td><?php echo $x++.'.'; ?></td>
-                    <td>{{$skill->skill_title}}</td>
-                    <td><img src="{{asset('images/'.$skill->picture)}}" alt="{{$skill->skill_title}}" class="img-thumbnail" width="50"></td>
+                    <td>{{$port->port_title}}</td>
+                    <td><img src="{{asset('images/'.$port->picture)}}" alt="{{$port->port_title}}" class="img-thumbnail" width="100"></td>
+                    <td><?php echo date('d-m-Y', strtotime($port->port_date)); ?></td>
                     <td>
-                      @include('skill.edit_modal')
-                      @include('skill.delete_modal')
+                      <a href="/portfolio/{{$port->port_slug}}" class="btn btn-info"><i class="fab fa-readme"></i> Detail</a>
+                      <a href="/portfolio/{{$port->port_slug}}/edit" class="btn btn-primary"><i class="fas fa-edit"></i> Edit</a>
+                     @include('portfolio.delete_modal')
+                      {{-- @include('skill.edit_modal')
+                      @include('skill.delete_modal') --}}
                     </td>
                   </tr>
                   @endforeach
@@ -71,16 +75,4 @@
     </section>
     <!-- /.content -->
   </div>
-  <script>
-    function previewImg() {
-        const picture = document.querySelector('#picture');
-        const imgPreview = document.querySelector('.img-preview');
-        const filePicture = new FileReader();
-        filePicture.readAsDataURL(picture.files[0]);
-
-        filePicture.onload = function(e) {
-            imgPreview.src = e.target.result;
-        }
-    }
-</script>
 @endsection
