@@ -61,7 +61,7 @@ class PortfolioController extends Controller
                 'port_date' => $request->port_date,
                 'port_info' => $request->port_info,
                 'port_slug' => Str::slug($request->port_title),
-                'picture' => 'default-image.JPG'
+                'picture' => 'default-image.jpg'
             ]);
 
             if (!$port) {

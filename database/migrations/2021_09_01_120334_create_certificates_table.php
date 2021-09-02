@@ -18,6 +18,7 @@ class CreateCertificatesTable extends Migration
             $table->string('cer_title');
             $table->string('cer_info');
             $table->date('cer_date');
+            $table->string('cer_slug')->unique();
             $table->string('picture')->nullable();
             $table->timestamps();
         });

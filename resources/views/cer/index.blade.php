@@ -29,7 +29,7 @@
             <div class="card">
               <div class="card-header">
                 <div class="float-right">
-                  @include('cer.create_modal')
+                  <a href="/certificate/create" class="btn btn-primary"><i class="fa fa-plus"></i> Add</a>
                 </div>
               </div>
               <!-- /.card-header -->
@@ -39,7 +39,6 @@
                   <tr>
                     <th>#</th>
                     <th>Title</th>
-                    <th>Description</th>
                     <th>Picture</th>
                     <th>Date</th>
                     <th>Action</th>
@@ -51,7 +50,6 @@
                   <tr>
                     <td><?php echo $x++.'.'; ?></td>
                     <td>{{$cer->cer_title}}</td>
-                    <td>{{$cer->cer_info}}</td>
                     <td>
                         @if ($cer->picture!=NULL)
                         <img src="{{asset('images/'.$cer->picture)}}" alt="{{$cer->cer_title}}" class="img-thumbnail" width="50">
@@ -61,7 +59,8 @@
                     </td>
                     <td><?php echo date("d F Y", strtotime($cer->cer_date)); ?></td>
                     <td>
-                      @include('cer.edit_modal')
+                      <a href="/certificate/{{$cer->cer_slug}}" class="btn btn-info"><i class="fab fa-readme"></i> Detail</a>
+                      <a href="/certificate/{{$cer->cer_slug}}/edit" class="btn btn-primary"><i class="fas fa-edit"></i> Edit</a>
                       @include('cer.delete_modal')
                     </td>
                   </tr>

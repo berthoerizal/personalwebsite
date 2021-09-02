@@ -26,7 +26,10 @@ class User extends Authenticatable
         'googlemap',
         'phone',
         'about',
-        'picture'
+        'picture',
+        'education',
+        'edu_date_start',
+        'edu_date_finish'
     ];
 
     /**

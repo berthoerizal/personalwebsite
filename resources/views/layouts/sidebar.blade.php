@@ -31,10 +31,10 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/skill" class="nav-link {{($active==='skill')?'active':''}}">
-            <i class="nav-icon fas fa-brain"></i>
+            <a href="/posts" class="nav-link">
+            <i class="nav-icon fas fa-feather"></i>
               <p>
-                Skill
+                Posts
               </p>
             </a>
           </li>
@@ -47,14 +47,6 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/experience" class="nav-link {{$active==='experience'?'active':''}}">
-            <i class="nav-icon fas fa-shoe-prints"></i>
-              <p>
-                Experience
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
             <a href="/certificate" class="nav-link {{$active==='certificate'?'active':''}}">
             <i class="nav-icon fas fa-award"></i>
               <p>
@@ -63,10 +55,18 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/posts" class="nav-link">
-            <i class="nav-icon fas fa-feather"></i>
+            <a href="/skill" class="nav-link {{($active==='skill')?'active':''}}">
+            <i class="nav-icon fas fa-brain"></i>
               <p>
-                Posts
+                Skill
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/experience" class="nav-link {{$active==='experience'?'active':''}}">
+            <i class="nav-icon fas fa-shoe-prints"></i>
+              <p>
+                Experience
               </p>
             </a>
           </li>

@@ -56,7 +56,7 @@
                         <img src="{{asset('images/default-image.JPG')}}" alt="{{$port->port_title}}" class="img-thumbnail" width="50">
                         @endif
                     </td>
-                    <td><?php echo date('d-m-Y', strtotime($port->port_date)); ?></td>
+                    <td><?php echo date('d F Y', strtotime($port->port_date)); ?></td>
                     <td>
                       <a href="/portfolio/{{$port->port_slug}}" class="btn btn-info"><i class="fab fa-readme"></i> Detail</a>
                       <a href="/portfolio/{{$port->port_slug}}/edit" class="btn btn-primary"><i class="fas fa-edit"></i> Edit</a>
