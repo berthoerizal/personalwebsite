@@ -31,7 +31,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/posts" class="nav-link">
+            <a href="/post" class="nav-link {{$active==='post'?'active':''}}">
             <i class="nav-icon fas fa-feather"></i>
               <p>
                 Posts

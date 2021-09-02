@@ -6,6 +6,7 @@ use App\Http\Controllers\SkillController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\CertificateController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,7 @@ Route::resource('skill', SkillController::class);
 Route::resource('portfolio', PortfolioController::class);
 Route::resource('experience', ExperienceController::class);
 Route::resource('certificate', CertificateController::class);
+Route::resource('post', PostController::class);
 // Route::get('/dashboard', [DashboardController::class, 'index']);
 // Route::get('/skill', [SkillController::class, 'index']);
 // Route::post('/skill', [SkillController::class, 'store']);
