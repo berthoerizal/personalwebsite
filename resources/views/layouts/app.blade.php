@@ -5,7 +5,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>@yield('title')</title>
-
+  <meta name="description" content="{{$configweb->desc}}">
+  <meta name="keywords" content="{{$configweb->keywords}}">
+  <meta name="author" content="{{$configweb->developer}}">
+  <meta name="type" content="{{$configweb->type}}">
+  <meta name="title" content="{{$configweb->title}}">
+  <meta name="profile" content="{{$configweb->profile}}">
+  <meta name="url" content="{{$configweb->url}}">
+  <meta name="site_name" content="{{$configweb->site_name}}">
+  <meta name="metadata" content="{{$configweb->metadata}}">
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
