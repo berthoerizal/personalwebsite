@@ -71,10 +71,10 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/setting" class="nav-link">
+            <a href="/configweb" class="nav-link {{$active==='configweb'?'active':''}}">
             <i class="nav-icon fas fa-wrench"></i>
               <p>
-                Setting
+                Configuration
               </p>
             </a>
           </li>
