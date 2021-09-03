@@ -5,15 +5,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>@yield('title')</title>
-  <meta name="description" content="{{$configweb->desc}}">
-  <meta name="keywords" content="{{$configweb->keywords}}">
-  <meta name="author" content="{{$configweb->developer}}">
-  <meta name="type" content="{{$configweb->type}}">
-  <meta name="title" content="{{$configweb->title}}">
-  <meta name="profile" content="{{$configweb->profile}}">
-  <meta name="url" content="{{$configweb->url}}">
-  <meta name="site_name" content="{{$configweb->site_name}}">
-  <meta name="metadata" content="{{$configweb->metadata}}">
+  <meta name="description" content="{{optional($configweb)->desc}}">
+  <meta name="keywords" content="{{optional($configweb)->keywords}}">
+  <meta name="author" content="{{optional($configweb)->developer}}">
+  <meta name="type" content="{{optional($configweb)->type}}">
+  <meta name="title" content="{{optional($configweb)->title}}">
+  <meta name="profile" content="{{optional($configweb)->profile}}">
+  <meta name="url" content="{{optional($configweb)->url}}">
+  <meta name="site_name" content="{{optional($configweb)->site_name}}">
+  <meta name="metadata" content="{{optional($configweb)->metadata}}">
+  <!-- Logo -->
+  <link rel="icon" type="{{asset('images/'.optional($configweb)->picture)}}" href="{{asset('images/'.optional($configweb)->picture)}}">
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
@@ -55,7 +57,7 @@
     <div class="float-right d-none d-sm-block">
       <b>Version</b> 3.1.0
     </div>
-    <strong>&copy; Copyright 2021 - <a href="{{$configweb->url}}">{{$configweb->developer}}</a></strong>
+    <strong>&copy; Copyright 2021 - <a href="{{optional($configweb)->url}}">{{optional($configweb)->developer}}</a></strong>
   </footer>
 
   <!-- Control Sidebar -->

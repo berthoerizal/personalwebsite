@@ -1,8 +1,8 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="template_admin/index3.html" class="brand-link">
-      {{-- <img src="template_admin/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8"> --}}
-      <span class="brand-text font-weight-light"><i class="fas fa-signature"></i> <b>Personal Website</b></span>
+      <img src="{{asset('images/'.optional($configweb)->picture)}}" alt="{{optional($configweb)->site_name}}" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light"><b>Personal Website</b></span>
     </a>
 
     <!-- Sidebar -->
@@ -55,18 +55,18 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/skill" class="nav-link {{($active==='skill')?'active':''}}">
-            <i class="nav-icon fas fa-brain"></i>
-              <p>
-                Skill
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
             <a href="/experience" class="nav-link {{$active==='experience'?'active':''}}">
             <i class="nav-icon fas fa-shoe-prints"></i>
               <p>
                 Experience
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/skill" class="nav-link {{($active==='skill')?'active':''}}">
+            <i class="nav-icon fas fa-brain"></i>
+              <p>
+                Skill
               </p>
             </a>
           </li>
