@@ -39,7 +39,7 @@
                   <thead>
                   <tr>
                     <th>#</th>
-                    <th>Title</th>
+                    <th width="30%">Title</th>
                     <th>Picture</th>
                     <th>Date</th>
                     <th>Action</th>

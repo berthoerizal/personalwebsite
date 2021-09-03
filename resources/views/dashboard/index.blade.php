@@ -133,7 +133,7 @@
                                   <label for="picture">Picture</label>
                               </div>
                               <div class="col-sm-4">
-                                <img src="{{ asset('images/default-image.jpg') }}" alt="Preview-image" class="img-thumbnail img-preview">
+                                <img src="{{ asset('images/default-image.jpg') }}" alt="Preview Image" class="img-thumbnail img-preview">
                               </div>
                               <div class="col-sm-8">
                                   <div class="custom-file">
@@ -172,7 +172,7 @@
                 <i class="fas fa-cookie bg-blue"></i>
                 <div class="timeline-item">
                   <span class="time"><i class="fas fa-clock"></i> {{$post->created_at->diffForHumans()}}</span>
-                  <h3 class="timeline-header"><a href="#">{{$post->post_title}}</a> By {{$configweb->developer}}</h3>
+                  <h3 class="timeline-header"><a href="/post/{{$post->post_slug}}">{{$post->post_title}}</a></h3>
 
                   <div class="timeline-body">
                     {!!  substr(strip_tags($post->post_info), 0, 100) !!}...
@@ -197,4 +197,20 @@
     </section>
     <!-- /.content -->
   </div>
+  <script>
+    function previewImg() {
+        const picture = document.querySelector('#picture');
+        const pictureLabel = document.querySelector('.custom-file-label');
+        const imgPreview = document.querySelector('.img-preview');
+
+        pictureLabel.textContent = picture.files[0].name;
+
+        const filePicture = new FileReader();
+        filePicture.readAsDataURL(picture.files[0]);
+
+        filePicture.onload = function(e) {
+            imgPreview.src = e.target.result;
+        }
+    }
+  </script>
 @endsection
