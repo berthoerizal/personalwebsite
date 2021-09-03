@@ -52,9 +52,11 @@
                     <td>{{$cer->cer_title}}</td>
                     <td>
                         @if ($cer->picture!=NULL)
-                        <img src="{{asset('images/'.$cer->picture)}}" alt="{{$cer->cer_title}}" class="img-thumbnail" width="50">
+                          <a href="{{asset('images/'.$cer->picture)}}" data-toggle="lightbox" data-title="{{$cer->cer_title}}" data-gallery="gallery">
+                            <img src="{{asset('images/'.$cer->picture)}}" class="img-thumbnail" width="50" alt="{{$cer->cer_title}}"/>
+                          </a>
                         @else
-                        <img src="{{asset('images/default-image.JPG')}}" alt="{{$cer->cer_title}}" class="img-thumbnail" width="50">
+                          <img src="{{asset('images/default-image.JPG')}}" alt="{{$cer->cer_title}}" class="img-thumbnail" width="50">
                         @endif
                     </td>
                     <td><?php echo date("d F Y", strtotime($cer->cer_date)); ?></td>

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('title', $title)
 @section('content')
+
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -52,9 +53,11 @@
                     <td>{{$post->post_title}}</td>
                     <td>
                         @if ($post->picture!=NULL)
-                            <img src="{{asset('images/'.$post->picture)}}" alt="{{$post->post_title}}" class="img-thumbnail" width="50">
+                            <a href="{{asset('images/'.$post->picture)}}" data-toggle="lightbox" data-title="{{$post->post_title}}" data-gallery="gallery">
+                              <img src="{{asset('images/'.$post->picture)}}" class="img-thumbnail" width="50" alt="{{$post->post_title}}"/>
+                            </a>    
                         @else
-                        <img src="{{asset('images/default-image.JPG')}}" alt="{{$post->post_title}}" class="img-thumbnail" width="50">
+                          <img src="{{asset('images/default-image.JPG')}}" alt="{{$post->post_title}}" class="img-thumbnail" width="50">
                         @endif
                     </td>
                     <td><?php echo date("d F Y", strtotime($post->created_at)); ?></td>
@@ -80,16 +83,5 @@
     </section>
     <!-- /.content -->
   </div>
-  <script>
-    function previewImg() {
-        const picture = document.querySelector('#picture');
-        const imgPreview = document.querySelector('.img-preview');
-        const filePicture = new FileReader();
-        filePicture.readAsDataURL(picture.files[0]);
-
-        filePicture.onload = function(e) {
-            imgPreview.src = e.target.result;
-        }
-    }
-</script>
+  
 @endsection

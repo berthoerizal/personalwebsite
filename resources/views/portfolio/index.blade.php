@@ -51,9 +51,11 @@
                     <td>{{$port->port_title}}</td>
                     <td>
                         @if ($port->picture!=NULL)
-                        <img src="{{asset('images/'.$port->picture)}}" alt="{{$port->port_title}}" class="img-thumbnail" width="50">
+                          <a href="{{asset('images/'.$port->picture)}}" data-toggle="lightbox" data-title="{{$port->port_title}}" data-gallery="gallery">
+                            <img src="{{asset('images/'.$port->picture)}}" class="img-thumbnail" width="50" alt="{{$port->post_title}}"/>
+                          </a>  
                         @else
-                        <img src="{{asset('images/default-image.JPG')}}" alt="{{$port->port_title}}" class="img-thumbnail" width="50">
+                          <img src="{{asset('images/default-image.JPG')}}" alt="{{$port->port_title}}" class="img-thumbnail" width="50">
                         @endif
                     </td>
                     <td><?php echo date('d F Y', strtotime($port->port_date)); ?></td>

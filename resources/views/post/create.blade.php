@@ -61,7 +61,7 @@
                                 <label for="picture">Picture</label>
                             </div>
                             <div class="col-sm-2">
-                            <img src="{{ asset('images/default-image.jpg') }}" alt="" class="img-thumbnail img-preview">
+                            <img src="{{ asset('images/default-image.jpg') }}" alt="Preview-image" class="img-thumbnail img-preview">
                             </div>
                             <div class="col-sm-10">
                                 <div class="custom-file">

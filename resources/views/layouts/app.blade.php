@@ -18,6 +18,8 @@
   <link rel="stylesheet" href="{{asset('template_admin/dist/css/adminlte.min.css')}}">
   <!-- summernote -->
   <link rel="stylesheet" href="{{asset('template_admin/plugins/summernote/summernote-bs4.min.css')}}">
+  <!-- Ekko Lightbox -->
+  <link rel="stylesheet" href="{{asset('template_admin/plugins/ekko-lightbox/ekko-lightbox.css')}}">
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -79,6 +81,8 @@
 <script src="{{asset('template_admin/plugins/summernote/summernote-bs4.min.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('template_admin/dist/js/demo.js')}}"></script>
+<!-- Ekko Lightbox -->
+<script src="{{asset('template_admin/plugins/ekko-lightbox/ekko-lightbox.min.js')}}"></script>
 <!-- Page specific script -->
 <script>
   $(function () {
@@ -103,6 +107,14 @@
     });
     // Summernote
     $('#summernote').summernote()
+
+    //lightbox
+    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+      event.preventDefault();
+      $(this).ekkoLightbox({
+        alwaysShowClose: true
+      });
+    });
   });
 </script>
 </body>
