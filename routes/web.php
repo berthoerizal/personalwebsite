@@ -38,8 +38,8 @@ Route::get('/profile', [ProfileController::class, 'index'])->middleware('auth');
 Route::put('/profile/{id}', [ProfileController::class, 'update'])->middleware('auth');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
-Route::get('/register', [RegisterController::class, 'index'])->name('register')->middleware('guest');
-Route::post('/register', [RegisterController::class, 'store'])->middleware('guest');
+// Route::get('/register', [RegisterController::class, 'index'])->name('register')->middleware('guest');
+// Route::post('/register', [RegisterController::class, 'store'])->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate'])->middleware('guest');
 Route::post('/logout', [LoginController::class, 'logout']);
 
