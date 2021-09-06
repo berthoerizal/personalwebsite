@@ -8,6 +8,9 @@ use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ConfigwebController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,14 +26,23 @@ use App\Http\Controllers\ConfigwebController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/dashboard', [DashboardController::class, 'index']);
-Route::resource('skill', SkillController::class);
-Route::resource('portfolio', PortfolioController::class);
-Route::resource('experience', ExperienceController::class);
-Route::resource('certificate', CertificateController::class);
-Route::resource('post', PostController::class);
-Route::get('/configweb', [ConfigwebController::class, 'index']);
-Route::put('/configweb/{id}', [ConfigwebController::class, 'update']);
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+Route::resource('skill', SkillController::class)->middleware('auth');
+Route::resource('portfolio', PortfolioController::class)->middleware('auth');
+Route::resource('experience', ExperienceController::class)->middleware('auth');
+Route::resource('certificate', CertificateController::class)->middleware('auth');
+Route::resource('post', PostController::class)->middleware('auth');
+Route::get('/configweb', [ConfigwebController::class, 'index'])->middleware('auth');
+Route::put('/configweb/{id}', [ConfigwebController::class, 'update'])->middleware('auth');
+Route::get('/profile', [ProfileController::class, 'index'])->middleware('auth');
+Route::put('/profile/{id}', [ProfileController::class, 'update'])->middleware('auth');
+
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::get('/register', [RegisterController::class, 'index'])->name('register')->middleware('guest');
+Route::post('/register', [RegisterController::class, 'store'])->middleware('guest');
+Route::post('/login', [LoginController::class, 'authenticate'])->middleware('guest');
+Route::post('/logout', [LoginController::class, 'logout']);
+
 // Route::get('/dashboard', [DashboardController::class, 'index']);
 // Route::get('/skill', [SkillController::class, 'index']);
 // Route::post('/skill', [SkillController::class, 'store']);

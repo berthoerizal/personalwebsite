@@ -88,7 +88,7 @@ class PortfolioController extends Controller
             'port_title' => 'required|unique:portfolios,port_title,' . $id,
             'port_date' => 'required',
             'port_info' => 'required',
-            'picture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'picture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
         if ($request->hasFile('picture')) {

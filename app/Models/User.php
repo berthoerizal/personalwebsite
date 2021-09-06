@@ -29,7 +29,8 @@ class User extends Authenticatable
         'picture',
         'education',
         'edu_date_start',
-        'edu_date_finish'
+        'edu_date_finish',
+        'job'
     ];
 
     /**

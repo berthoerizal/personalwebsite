@@ -13,7 +13,7 @@
           <img src="{{asset('template_admin/dist/img/pasphoto2021.jpg')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Bertho Erizal</a>
+          <a href="/profile" class="d-block {{($active==='profile')?'active':''}}">{{auth()->user()->name}}</a>
         </div>
       </div>
 
@@ -75,14 +75,6 @@
             <i class="nav-icon fas fa-wrench"></i>
               <p>
                 Configuration
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="/logout" class="nav-link">
-            <i class="nav-icon fas fa-sign-out-alt"></i>
-              <p>
-                Logout
               </p>
             </a>
           </li>

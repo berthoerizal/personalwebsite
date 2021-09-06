@@ -27,7 +27,8 @@ class CreateUsersTable extends Migration
             $table->string('picture')->nullable();
             $table->string('education')->nullable();
             $table->date('edu_date_start')->nullable();
-            $table->date('edu_date_finish')->finish();
+            $table->date('edu_date_finish')->nullable();
+            $table->string('job')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
