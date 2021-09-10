@@ -22,6 +22,10 @@
                             <input type="text" class="form-control" name="exp_title" id="exp_title" placeholder="Experience Title" value="{{old('exp_title')}}">
                         </div>
                         <div class="form-group">
+                            <label for="exp_place">Experience Place</label>
+                            <input type="text" class="form-control" name="exp_place" id="exp_place" placeholder="Experience Place" value="{{old('exp_place')}}">
+                        </div>
+                        <div class="form-group">
                             <label for="exp_info">Experience Description</label>
                             <input type="text" class="form-control" name="exp_info" id="exp_info" placeholder="Experience Description" value="{{old('exp_info')}}">
                         </div>

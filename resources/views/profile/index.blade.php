@@ -154,7 +154,12 @@
                         <div class="form-group row">
                           <label for="inputPhone" class="col-sm-3 col-form-label">Phone</label>
                           <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputPhone" placeholder="Phone" name="phone" value="{{$profile->phone}}">
+                            <div class="input-group mb-2">
+                              <div class="input-group-prepend">
+                                <div class="input-group-text">+62</div>
+                              </div>
+                              <input type="text" class="form-control" id="inlineFormInputGroup" name="phone" value="{{$profile->phone}}">
+                            </div>
                           </div>
                         </div>
                         <div class="form-group row">

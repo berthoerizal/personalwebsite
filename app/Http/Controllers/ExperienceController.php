@@ -21,6 +21,7 @@ class ExperienceController extends Controller
         $request->validate([
             'exp_title' => 'required',
             'exp_info' => 'required',
+            'exp_place' => 'required',
             'exp_date_start' => 'required',
             'exp_date_finish' => 'required'
         ]);
@@ -28,6 +29,7 @@ class ExperienceController extends Controller
         $exp = Experience::create([
             'exp_title' => $request->exp_title,
             'exp_info' => $request->exp_info,
+            'exp_place' => $request->exp_place,
             'exp_date_start' => $request->exp_date_start,
             'exp_date_finish' => $request->exp_date_finish
         ]);
@@ -53,6 +55,7 @@ class ExperienceController extends Controller
         $exp = Experience::find($id);
         $exp->update([
             'exp_title' => $request->exp_title,
+            'exp_place' => $request->exp_place,
             'exp_info' => $request->exp_info,
             'exp_date_start' => $request->exp_date_start,
             'exp_date_finish' => $request->exp_date_finish

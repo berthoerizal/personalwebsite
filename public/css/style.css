@@ -1,0 +1,19 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+#content {
+    margin-top: 80px;
+}
+
+.router-link-exact-active {
+    font-weight: bold;
+}
+
+.card {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.canvas_grafik {
+    height: 350px !important;
+}

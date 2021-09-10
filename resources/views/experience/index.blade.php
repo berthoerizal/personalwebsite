@@ -39,9 +39,8 @@
                     <th>#</th>
                     <th>Title</th>
                     <th>Info</th>
-                    <th>Date Start</th>
-                    <th>Date Finish</th>
-                    <th>Action</th>
+                    <th>Date</th>
+                    <th width="20%">Action</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -49,10 +48,9 @@
                   @foreach ($exps as $exp)
                   <tr>
                     <td><?php echo $x++.'.'; ?></td>
-                    <td>{{$exp->exp_title}}</td>
+                    <td>{{$exp->exp_title}}<br><b>{{$exp->exp_place}}</b></td>
                     <td>{{$exp->exp_info}}</td>
-                    <td><?php echo date("d F Y", strtotime($exp->exp_date_start)); ?></td>
-                    <td><?php echo date("d F Y", strtotime($exp->exp_date_finish)); ?></td>
+                    <td><?php echo date("m/Y", strtotime($exp->exp_date_start)); ?>-<?php echo date("m/Y", strtotime($exp->exp_date_finish)); ?></td>
                     <td>
                       @include('experience.edit_modal')
                       @include('experience.delete_modal')

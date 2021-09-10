@@ -9,5 +9,5 @@ class Experience extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['exp_title', 'exp_info', 'exp_date_start', 'exp_date_finish'];
+    protected $fillable = ['exp_title', 'exp_place', 'exp_info', 'exp_date_start', 'exp_date_finish'];
 }
