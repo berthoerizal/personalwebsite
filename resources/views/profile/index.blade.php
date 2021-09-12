@@ -109,6 +109,11 @@
                         <p>
                           {!!$profile->about!!}
                         </p>
+                        <ul class="list-inline">
+                          <li class="list-inline-item"><a href="{{$profile->akun_fb}}"><i class="fab fa-facebook-f"></i></a></li>
+                          <li class="list-inline-item"><a href="{{$profile->akun_linkedin}}"><i class="fab fa-linkedin-in"></i></a></li>
+                          <li class="list-inline-item"><a href="{{$profile->akun_git}}"><i class="fab fa-github"></i></a></li>
+                        </ul>
                         <p>
                           <iframe src="{{$profile->googlemap}}" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                         </p>
@@ -162,6 +167,7 @@
                             </div>
                           </div>
                         </div>
+                        
                         <div class="form-group row">
                           <label for="inputAbout" class="col-sm-3 col-form-label">About</label>
                           <div class="col-sm-9">
@@ -190,6 +196,39 @@
                           <label for="inputJob" class="col-sm-3 col-form-label">Job</label>
                           <div class="col-sm-9">
                             <input type="text" class="form-control" id="inputJob" placeholder="Job" name="job" value="{{$profile->job}}">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="inputFacebook" class="col-sm-3 col-form-label">Facebook</label>
+                          <div class="col-sm-9">
+                            <div class="input-group mb-2">
+                              <div class="input-group-prepend">
+                                <div class="input-group-text"><i class="fab fa-facebook-f"></i></div>
+                              </div>
+                              <input type="text" class="form-control" id="inlineFormInputGroup" name="akun_fb" value="{{$profile->akun_fb}}">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="inputLinkedin" class="col-sm-3 col-form-label">LinkedIn</label>
+                          <div class="col-sm-9">
+                            <div class="input-group mb-2">
+                              <div class="input-group-prepend">
+                                <div class="input-group-text"><i class="fab fa-linkedin-in"></i></div>
+                              </div>
+                              <input type="text" class="form-control" id="inlineFormInputGroup" name="akun_linkedin" value="{{$profile->akun_linkedin}}">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="inputGithub" class="col-sm-3 col-form-label">Github</label>
+                          <div class="col-sm-9">
+                            <div class="input-group mb-2">
+                              <div class="input-group-prepend">
+                                <div class="input-group-text"><i class="fab fa-github"></i></div>
+                              </div>
+                              <input type="text" class="form-control" id="inlineFormInputGroup" name="akun_git" value="{{$profile->akun_git}}">
+                            </div>
                           </div>
                         </div>
                         <div class="form-group row">

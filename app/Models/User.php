@@ -30,7 +30,10 @@ class User extends Authenticatable
         'education',
         'edu_date_start',
         'edu_date_finish',
-        'job'
+        'job',
+        'akun_fb',
+        'akun_git',
+        'akun_linkedin'
     ];
 
     /**

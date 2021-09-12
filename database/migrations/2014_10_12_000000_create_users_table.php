@@ -29,6 +29,9 @@ class CreateUsersTable extends Migration
             $table->date('edu_date_start')->nullable();
             $table->date('edu_date_finish')->nullable();
             $table->string('job')->nullable();
+            $table->string('akun_fb')->nullable();
+            $table->string('akun_git')->nullable();
+            $table->string('akun_linkedin')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

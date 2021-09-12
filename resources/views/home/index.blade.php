@@ -31,6 +31,8 @@
       <link href="{{asset('template_home/css/main.css?ver=1.2.0')}}" rel="stylesheet">
       
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" integrity="sha512-Velp0ebMKjcd9RiCoaHhLXkR1sFoCCWXNp6w4zj1hfMifYB5441C+sKeBl/T/Ka6NjBiRfBBQRaQq65ekYz3UQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <!-- Font Awesome -->
+      <link rel="stylesheet" href="{{asset('template_admin/plugins/fontawesome-free/css/all.min.css')}}">
       <noscript>
          <style type="text/css">
             [data-aos] {
@@ -54,8 +56,6 @@
                         </li>
                         <li class="nav-item"><a class="nav-link" href="#">Experience</a>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="#">Certificate</a>
-                        </li>
                         <li class="nav-item"><a class="nav-link" href="#">Contact</a>
                         </li>
                      </ul>
@@ -75,7 +75,7 @@
                      <div class="col-md-8 text-left text-md-start mb-4">
                         <h2 class="h1 mt-2" data-aos="fade-left" data-aos-delay="0">{{$user->name}}</h2>
                         <h5 data-aos="fade-left" data-aos-delay="100" class="mb-3">{{$user->job}}</h5>
-                        <div class="d-print-none" data-aos="fade-left" data-aos-delay="200"><a class="btn btn-dark text-wihte mr-2" href="right-resume.pdf" target="_blank">Download CV</a><a class="btn btn-primary  mr-2" href="#contact">Hire Me</a></div>
+                        <div class="d-print-none" data-aos="fade-left" data-aos-delay="200"><a class="btn btn-dark text-wihte mr-2" href="right-resume.pdf" target="_blank">Download CV</a><a class="btn btn-primary  mr-2" href="#contact">Contact Me</a></div>
                      </div>
                   </div>
                </div>
@@ -220,7 +220,12 @@
                         </div>
                      </div>
                      <div class="col-md-3">
-                        <p>Social Media</p>
+                        <h3 class="h6">Social Media</h3>
+                        <ul class="list-inline">
+                           <li class="list-inline-item"><a href="{{$user->akun_fb}}"><i class="fab fa-facebook-f"></i></a></li>
+                           <li class="list-inline-item"><a href="{{$user->akun_linkedin}}"><i class="fab fa-linkedin-in"></i></a></li>
+                           <li class="list-inline-item"><a href="{{$user->akun_git}}"><i class="fab fa-github"></i></a></li>
+                         </ul>
                      </div>
                   </div>
                </div>

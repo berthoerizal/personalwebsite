@@ -46,6 +46,9 @@ class ProfileController extends Controller
                 'edu_date_start' => $request->edu_date_start,
                 'edu_date_finish' => $request->edu_date_finish,
                 'job' => $request->job,
+                'akun_fb' => $request->akun_fb,
+                'akun_git' => $request->akun_git,
+                'akun_linkedin' => $request->akun_linkedin,
                 'picture' => $picture
             ]);
 
@@ -68,6 +71,9 @@ class ProfileController extends Controller
                 'education' => $request->education,
                 'edu_date_start' => $request->edu_date_start,
                 'edu_date_finish' => $request->edu_date_finish,
+                'akun_fb' => $request->akun_fb,
+                'akun_git' => $request->akun_git,
+                'akun_linkedin' => $request->akun_linkedin,
                 'job' => $request->job
             ]);
 
