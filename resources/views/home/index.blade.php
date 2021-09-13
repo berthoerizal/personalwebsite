@@ -79,10 +79,10 @@
                     <div class="col-md-4">
                     <div class="avatar hover-effect bg-white" style="box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;"><img src="{{asset('images/'.$user->picture)}}" width="200" height="200"/></div>
                     </div>
-                    <div class="col-md-8 text-left text-md-start mb-4">
-                    <h2 class="h1 mt-2" data-aos="fade-left" data-aos-delay="0">{{$user->name}}</h2>
-                    <h5 data-aos="fade-left" data-aos-delay="100" class="mb-3">{{$user->job}}</h5>
-                    <div class="d-print-none" data-aos="fade-left" data-aos-delay="200"><a class="btn btn-dark text-wihte mr-2" href="right-resume.pdf" target="_blank">Download CV</a></div>
+                    <div class="col-md-4 text-center text-md-start mb-4">
+                    <h2 class="h1 mt-2" data-aos="fade-left" data-aos-delay="0" style="letter-spacing: 3px;">{{$user->name}}</h2>
+                    <h5 data-aos="fade-left" data-aos-delay="100" class="mb-3" style="letter-spacing: 3px;">{{$user->job}}</h5>
+                    <div class="d-print-none" data-aos="fade-left" data-aos-delay="200"><a class="btn btn-light text-wihte mr-2" href="right-resume.pdf" target="_blank"><i class="fa fa-download"></i> Download CV</a></div>
                     </div>
                 </div>
             </div>
@@ -94,34 +94,34 @@
                     </div>
                     <div class="col-md-5 offset-md-1">
                     <div class="row mt-2">
-                        <div class="col-sm-3 col-3">
+                        <div class="col-sm-4 col-4">
                             <div class="pb-1"><b>Age</b></div>
                         </div>
-                        <div class="col-sm-9 col-9">
+                        <div class="col-sm-8 col-8">
                             <div class="pb-1 text-secondary"><?php echo date("Y")-date("Y",strtotime($user->birthday)); ?></div>
                         </div>
-                        <div class="col-sm-3 col-3">
+                        <div class="col-sm-4 col-4">
                             <div class="pb-1"><b>Email</b></div>
                         </div>
-                        <div class="col-sm-9 col-9">
+                        <div class="col-sm-8 col-8">
                             <div class="pb-1 text-secondary">{{$user->email}}</div>
                         </div>
-                        <div class="col-sm-3 col-3">
+                        <div class="col-sm-4 col-4">
                             <div class="pb-1"><b>Phone</b></div>
                         </div>
-                        <div class="col-sm-9 col-9">
+                        <div class="col-sm-8 col-8">
                             <div class="pb-1 text-secondary">+62{{$user->phone}}</div>
                         </div>
-                        <div class="col-sm-3 col-3">
+                        <div class="col-sm-4 col-4">
                             <div class="pb-1"><b>Address</b></div>
                         </div>
-                        <div class="col-sm-9 col-9">
+                        <div class="col-sm-8 col-8">
                             <div class="pb-1 text-secondary">{{$user->address}}</div>
                         </div>
-                        <div class="col-sm-3 col-3">
+                        <div class="col-sm-4 col-4">
                             <div class="pb-1"><b>Study</b></div>
                         </div>
-                        <div class="col-sm-9 col-9">
+                        <div class="col-sm-8 col-8">
                             <div class="pb-1 text-secondary">{{$user->education}}<br><?php echo date("Y",strtotime($user->edu_date_start)); ?>-<?php echo date("Y", strtotime($user->edu_date_finish)); ?></div>
                         </div>
                     </div>
