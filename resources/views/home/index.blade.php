@@ -82,7 +82,7 @@
                     <div class="col-md-4 text-center text-md-start mb-4">
                     <h2 class="h1 mt-2" data-aos="fade-left" data-aos-delay="0" style="letter-spacing: 3px;">{{$user->name}}</h2>
                     <h5 data-aos="fade-left" data-aos-delay="100" class="mb-3" style="letter-spacing: 3px;">{{$user->job}}</h5>
-                    <div class="d-print-none" data-aos="fade-left" data-aos-delay="200"><a class="btn btn-light text-wihte mr-2" href="right-resume.pdf" target="_blank"><i class="fa fa-download"></i> Download CV</a></div>
+                    <div class="d-print-none" data-aos="fade-left" data-aos-delay="200"><a class="btn btn-light text-wihte mr-2" href="/downloadcv" target="_blank"><i class="fa fa-download"></i> Download CV</a></div>
                     </div>
                 </div>
             </div>
@@ -155,7 +155,7 @@
                     <h2 class="h3 mb-4">Portfolio</h2>
                     </div>
                     @foreach ($ports as $port)
-                    <div class="col-lg-3 col-md-4 col-6">
+                    <div class="col-lg-3 col-md-4 col-12">
                     <div class="card mb-4">
                         <a href="{{asset('images/'.$port->picture)}}" data-toggle="lightbox" class="card-img-top" data-footer="{{$port->port_info}}" data-max-width="600" data-gallery="example-gallery" data-title="{{$port->port_title}}">
                             <img class="img-fluid img-thumbnail" src="{{asset('images/'.$port->picture)}}" alt="{{$port->port_title}}" style="width: 100%; height: 200px;">
@@ -165,10 +165,6 @@
                         </div>
                     </div>
                     </div>
-
-                    {{-- <a href="https://unsplash.it/1200/768.jpg?image=251" data-toggle="lightbox">
-                    <img src="https://unsplash.it/600.jpg?image=251" class="img-fluid">
-                </a> --}}
                     @endforeach
                 </div>
             </div>
