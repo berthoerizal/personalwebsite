@@ -43,6 +43,8 @@ Route::get('/login', [LoginController::class, 'index'])->name('login')->middlewa
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
+Route::post('/sendmail', [ProfileController::class, 'sendmail']);
+
 // Route::get('/dashboard', [DashboardController::class, 'index']);
 // Route::get('/skill', [SkillController::class, 'index']);
 // Route::post('/skill', [SkillController::class, 'store']);

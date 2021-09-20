@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
+use App\Mail\TestMail;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\URL;
 
 class ProfileController extends Controller
 {
@@ -85,5 +89,17 @@ class ProfileController extends Controller
                 return redirect('/profile');
             }
         }
+    }
+
+    public function sendmail(Request $request)
+    {
+        $details = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'msg' => $request->msg
+        ];
+
+        Mail::to("berthoerizal10@gmail.com")->send(new TestMail($details));
+        return Redirect::to(URL::previous() . "#contact")->with('message_sent', 'Your message has been sent successfully!');
     }
 }
