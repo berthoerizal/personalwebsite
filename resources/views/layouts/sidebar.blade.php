@@ -10,7 +10,7 @@
       <!-- Sidebar user (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="{{asset('template_admin/dist/img/pasphoto2021.jpg')}}" class="img-circle elevation-2" alt="User Image">
+          <img src="{{asset('images/'.auth()->user()->picture)}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="/profile" class="d-block {{($active==='profile')?'active':''}}">{{auth()->user()->name}}</a>
