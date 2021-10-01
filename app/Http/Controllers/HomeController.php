@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Skill;
 use App\Models\Portfolio;
+use App\Models\Certificate;
 use Illuminate\Support\Facades\DB;
 use App\Mail\TestMail;
 use Illuminate\Support\Facades\Mail;
@@ -20,7 +21,8 @@ class HomeController extends Controller
         $skills = Skill::all();
         $ports = Portfolio::paginate(8);
         $exps = DB::table('experiences')->orderBy('exp_date_finish', 'desc')->get();
-        return view('home.index', ['title' => $title, 'user' => $user, 'skills' => $skills, 'ports' => $ports, 'exps' => $exps]);
+        $certifs = Certificate::all();
+        return view('home.index', ['title' => $title, 'user' => $user, 'skills' => $skills, 'ports' => $ports, 'exps' => $exps, 'certifs' => $certifs]);
     }
 
     public function sendmail(Request $request)

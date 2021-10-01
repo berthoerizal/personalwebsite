@@ -16,7 +16,9 @@
       <meta name="metadata" content="{{optional($configweb)->metadata}}">
       {{-- title and logo --}}
       <title>{{optional($configweb)->site_name}}</title>
-      <link rel="icon" type="{{asset('images/'.optional($configweb)->picture)}}" href="{{asset('images/'.optional($configweb)->picture)}}">
+	  <link href="{{ asset('images/'.optional($configweb)->picture)}}" rel="icon">
+    <link href="{{ asset('images/'.optional($configweb)->picture)}}" rel="icon">
+	   
       <!-- Bootstrap CSS -->
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
       <!-- Custom Css -->
@@ -29,6 +31,9 @@
       <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
       <!-- Google Fonts -->
       <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
    </head>
    <body id="home">
       <nav class="navbar navbar-default navbar-expand-lg fixed-top custom-navbar">
@@ -52,6 +57,9 @@
                   </li>
                   <li class="nav-item nav-custom-link">
                      <a class="nav-link" href="#experience">Experience <i class="icon ion-ios-arrow-forward icon-mobile"></i></a>
+                  </li>
+                  <li class="nav-item nav-custom-link">
+                     <a class="nav-link" href="#certificate">Certificate <i class="icon ion-ios-arrow-forward icon-mobile"></i></a>
                   </li>
                   <li class="nav-item nav-custom-link">
                      <a class="nav-link" href="#contact">Contact <i class="icon ion-ios-arrow-forward icon-mobile"></i></a>
@@ -116,7 +124,7 @@
                   </div>
                </div>
                <div class="col-md-7">
-                  <img src="{{asset('images/undraw/image1.png')}}" class="img-fluid" alt="Demo image">
+                  <img src="{{asset('images/undraw/undraw_Developer_activity_re_39tg.png')}}" class="img-fluid" alt="Demo image">
                </div>
             </div>
          </div>
@@ -150,12 +158,14 @@
                <h2>MY PORTFOLIO</h2>
             </div>
             <div class="row">
-               @foreach ($ports as $port)
+                @foreach ($ports as $port)
                <!-- Gallery item -->
-               <div class="col-xl-3 col-lg-4 col-md-6 mt-4">
-                  <div class="bg-white rounded shadow-sm">
-                     <a href="{{asset('images/'.$port->picture)}}" data-toggle="lightbox" class="card-img-top" data-footer="{{$port->port_info}}" data-max-width="600" data-gallery="example-gallery" data-title="{{$port->port_title}}">
-                     <img src="{{asset('images/'.$port->picture)}}" alt="{{$port->port_title}}" class="img-fluid card-img-top">
+               <div class="col-xl-4 col-lg-4 col-md-6">
+                  <div class="testimonial-box">
+                     <a href="{{asset('images/'.$port->picture)}}" data-toggle="lightbox" class="card-img-top" data-footer="{{$port->port_info}}" data-max-width="800" data-gallery="example-gallery" data-title="{{$port->port_title}}">
+						 <div class="d-flex justify-content-center">
+                     <img src="{{asset('images/'.$port->picture)}}" alt="{{$port->port_title}}" class="img-fluid card-img-top" style="width: auto; height: 200px;">
+						 </div>
                      </a>
                      <div class="p-4">
                         <h5> <a href="#" class="text-dark">{{$port->port_title}}</a></h5>
@@ -165,7 +175,7 @@
                <!-- End -->
                @endforeach
             </div>
-         </div>
+         </div> <!-- / container -->
       </section>
       <section id="experience">
          <div class="container">
@@ -189,20 +199,32 @@
             </div>
          </div>
       </section>
+      <section id="certificate">
+         <div class="container">
+            <div class="title-block" style="margin-bottom: 70px;">
+               <h2>MY CERTIFICATE</h2>
+            </div>
+            <div class="row photos">
+               @foreach ($certifs as $certif)
+                <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{asset('images/'.$certif->picture)}}" data-lightbox="photos"><img class="img-fluid" src="{{asset('images/'.$certif->picture)}}" alt="{{$certif->cer_title}}"></a></div>
+                @endforeach
+            </div>
+         </div> <!-- / container -->
+      </section>
       <footer class="footer" id="contact">
          <div class="container">
             <div class="row">
                <div class="col-md-5">
                   <h5><i class="fa fa-road"></i> GET IN TOUCH.</h5>
                   <div class="row">
-                     <div class="col-6">
+                     <div class="col-4">
                         <ul class="list-unstyled">
                            <li>Address</li>
                            <li>Phone</li>
                            <li>Email</li>
                         </ul>
                      </div>
-                     <div class="col-6">
+                     <div class="col-8">
                         <ul class="list-unstyled">
                            <li>{{$user->address}}</li>
                            <li>+62{{$user->phone}}</li>
@@ -253,6 +275,10 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js" integrity="sha512-Y2IiVZeaBwXG1wSV7f13plqlmFOx8MdjuHyYFVoYzhyRr3nH/NMDjTBSswijzADdNzMyWNetbLMfOpIPl6Cv9g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
       <script>
          $(document).on('click', '[data-toggle="lightbox"]', function(event) {
                event.preventDefault();
